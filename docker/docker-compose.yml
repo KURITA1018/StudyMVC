@@ -1,0 +1,201 @@
+version: '3'
+services:
+  ####################
+  # Apache           #
+  ####################
+
+  ####################
+  # Nginx            #
+  ####################
+
+  ####################
+  # Web Framework    #
+  ####################
+  web:
+    image: kurosawakuro/ruby_on_rails_image    
+    container_name: web
+    env_file: .env
+    command: /bin/sh -c "rm -f /app/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    environment:
+      - "TZ=Japan"
+    volumes:
+      - ./workspace:/app
+      - bundle-data:/usr/local/bundle
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mysql
+
+  web-php:
+    image: kurosawakuro/php_image
+    container_name: web-php
+    env_file: .env
+    environment:
+      - "TZ=Japan"
+    ports:
+      - '80:80'
+    volumes:
+      - ./workspace:/var/www/html
+    depends_on:
+      - mysql
+
+  ####################
+  # MySQL            #
+  ####################
+  mysql:
+    image: kurosawakuro/mysql_image
+    container_name: mysql
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  mysql-gui:
+    image: phpmyadmin/phpmyadmin
+    container_name: mysql-gui
+    environment:
+      PMA_ARBITRARY: 1
+      PMA_HOST: mysql
+      PMA_USER: root
+      PMA_PASSWORD: password
+    restart: always
+    links:
+      - mysql:mysql
+    ports:
+      - "8888:80"
+    volumes:
+      - phpmyadmin-data:/path/to/data
+
+  ####################
+  # Oracle           #
+  ####################
+
+  ####################
+  # MongoDB          #
+  ####################
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - mongo-data:/data/db
+
+  mongo-gui:
+    image: mongo-express
+    container_name: mongo-gui
+    restart: always
+    expose:
+      - 8082
+    ports:
+      - 8082:8082
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+      VCAP_APP_PORT: 8082
+
+  ####################
+  # Redis            #
+  ####################
+  redis:
+    image: redis
+    container_name: redis
+
+  redis-gui:
+    image: tenstartups/redis-commander
+    container_name: redis-gui
+    command: --redis-host redis --port 8082
+    links:
+      - redis:redis
+    ports:
+      - "8082:8082"
+
+  ####################
+  # Adminer          #
+  ####################
+  adminer:
+    image: dockette/adminer:full-php5
+    container_name: adminer
+    restart: always
+    ports:
+        - 8084:80
+        
+  ####################
+  # Anaconda         #
+  ####################
+  anaconda:
+    image: kurosawakuro/anaconda_image
+    container_name: anaconda
+    ports:
+      - "8880:8888"
+    volumes:
+        - ./workspace:/workspace
+
+  ####################
+  # Jenkins          #
+  ####################
+  jenkins:
+    image: jenkins
+    container_name: jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins-data:/var/jenkins_home
+
+  ####################
+  # AWS CLI          #
+  ####################
+
+  ####################
+  # TRUFFLE          #
+  ####################
+
+  ####################
+  # Zabbix           #
+  ####################
+  ####################
+  # Nagios           #
+  ####################
+  ####################
+  # Cloud9           #
+  ####################
+  cloud9:
+    image: kurosawakuro/cloud9_image
+    container_name: cloud9
+    command: node /cloud9/server.js --port 9001 -w /workspace -l 0.0.0.0 --auth user:password 
+    ports:
+      - "9001:9001"
+    volumes:
+      - ./workspace:/workspace
+      - cloud9-data:/cloud9
+
+  ####################
+  # portainer.io     #
+  ####################
+  portainer:
+    image: portainer/portainer
+    container_name: portainer
+    ports:
+      - "9000:9000"
+    command: -H unix:///var/run/docker.sock
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+
+
+volumes:
+  bundle-data:
+  mysql-data:
+  phpmyadmin-data:
+  jenkins-data:
+  mongo-data:
+  redis-data:
+  cloud9-data:
+  portainer_data:
+    driver: local
