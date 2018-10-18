@@ -128,9 +128,11 @@ docker-compose --version
 　９．再度GitHubからVagrantとDockerの設定ファイルをダウンロード<br>
  　　 ※ただし、今回はGUIでのダウンロードではなく、git cloneコマンドでダウンロードする。<br>
     
-     git clone https://github.com/kurosawa-kuro/VagrantDocker.git <br>
+     git clone https://github.com/kurosawa-kuro/VagrantDocker.git
      
 　　　※手順２はWindowsに対するダウンロード、今回はUbuntuに対するダウンロード
  
  １０．Dockerの中にプロジェクトを作成する。
  
+     docker-compose run web rails new . --force --database=mysql
+     sudo chown -R $USER:$USER workspace/
