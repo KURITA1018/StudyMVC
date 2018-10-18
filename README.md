@@ -143,9 +143,15 @@ docker-compose --version
      sudo chown -R $USER:$USER workspace/
      
  １１．MySqlに接続するため、DB周りの設定をする。<br>
-    《config》
-   　　● VagrantDocker/docker/workspace/config/database.yml <br>
-     
+ 
+　《config》 <br>
+  　　● VagrantDocker/docker/workspace/config/database.yml <br>
+    　　以下の３行を変更
+      
        username: root
        password: password
        host: mysql
+       
+　　　　
+    
+    
