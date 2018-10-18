@@ -7,6 +7,6 @@ MVCとRESTの仕組みを理解すること。
 # 事前準備
 環境構築に必要なツールのダウンロード＆インストール
 
-　vagrant　　　　　　　：https://www.vagrantup.com/
-　virtualbox 　　　　　：https://www.virtualbox.org/wiki/Downloads
-　Visual Studio Code　：https://code.visualstudio.com/
+　vagrant　　　　　　：https://www.vagrantup.com/ <br>
+　virtualbox          https://www.virtualbox.org/wiki/Downloads <br>
+　Visual Studio Code　：https://code.visualstudio.com/ <br>
