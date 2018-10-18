@@ -40,16 +40,16 @@ MVCとRESTの仕組みを理解すること。
  <br>
 　４．Visual Studio Codeを開く。
 　<br>
-
+　<br>
 
 #### ～Visual Studio Code～ <br>
- <br>
 　５．「File」→「Open File...」で手順１のワークフォルダを選択する。<br>
  <br>
 　６．「Terminal」→「New Terminal」を選択肢、ターミナルを起動する。 <br>
  <br>
 　７．ターミナルの画面にて「vagrant up」を実行する。<br>
 　　　この時、Vagrantfileを読み込み、記載されているシェルやバッチが実行される。<br>
+   
 ```
 Vagrant.configure("2") do |config|
 　～省略～
