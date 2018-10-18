@@ -119,7 +119,7 @@ docker-compose --version
 ```
  <br>
 　　これでUbuntuやupdate、ライブラリ、ミドルウェア等の諸々の実行環境をインストールしてくれる。 <br>
-  　※以降Vagrantを起動する際はターミナルで「vagrant up」と入力するか、VirtualBoxで直接起動する。 <br>
+　　　※以降Vagrantを起動する際はターミナルで「vagrant up」と入力するか、VirtualBoxで直接起動する。<br>
  <br>
  
  #### ～Ubuntu～
@@ -127,7 +127,10 @@ docker-compose --version
  
 　９．再度GitHubからVagrantとDockerの設定ファイルをダウンロード<br>
  　　 ※ただし、今回はGUIでのダウンロードではなく、git cloneコマンドでダウンロードする。<br>
-　　　git clone https://github.com/kurosawa-kuro/VagrantDocker.git <br>
+    
+     git clone https://github.com/kurosawa-kuro/VagrantDocker.git <br>
      
-     ※手順２はWindowsに対するダウンロード、今回はUbuntuに対するダウンロード<br>
- １０．
+　　　※手順２はWindowsに対するダウンロード、今回はUbuntuに対するダウンロード
+ 
+ １０．Dockerの中にプロジェクトを作成する。
+ 
