@@ -138,7 +138,7 @@ docker-compose --version
      
 　　　※手順２はWindowsに対するダウンロード、今回はUbuntuに対するダウンロード
  
- １０．Dockerの中にプロジェクトを作成する。
+ １０．Docker内にrailsのプロジェクトを作成する。
  
      docker-compose run web rails new . --force --database=mysql
      sudo chown -R $USER:$USER workspace/
@@ -173,7 +173,7 @@ docker-compose --version
 
 # 動作確認 
 
-　● コンテナを起動する<br>
+　● コンテナ内のSQLサーバーを起動する<br>
  
     docker-compose up web mysql mysql-gui portainer cloud9
  
