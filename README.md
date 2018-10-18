@@ -27,29 +27,29 @@ MVCとRESTの仕組みを理解すること。
       
 # 環境構築・設定 <br>
 
->〇Windows <br>
->
->　１．任意の場所にワークフォルダを作成する。<br>
->　　（どこでもいいが、容量が余っているドライブなど後に影響が出ない場所にした方がいい）<br>
-> <br>
->　２．GitHubからVagrantとDockerの設定ファイルをダウンロード<br>
->　　 URL : https://github.com/kurosawa-kuro/VagrantDocker <br>
->　　（これは作業を簡易化するために黒澤さんにて用意して頂いたもの）※中身は別途確認要 <br>
-> <br>
->　３．ダウンロードしたファイルの中身を全てを手順１で作成したワークフォルダにコピーする。<br>
-> <br>
->　４．Visual Studio Codeを開く。
->　<br>
+#### ～Windows～ <br>
+
+　１．任意の場所にワークフォルダを作成する。<br>
+　　（どこでもいいが、容量が余っているドライブなど後に影響が出ない場所にした方がいい）<br>
+ <br>
+　２．GitHubからVagrantとDockerの設定ファイルをダウンロード<br>
+　　 URL : https://github.com/kurosawa-kuro/VagrantDocker <br>
+　　（これは作業を簡易化するために黒澤さんにて用意して頂いたもの）※中身は別途確認要 <br>
+ <br>
+　３．ダウンロードしたファイルの中身を全てを手順１で作成したワークフォルダにコピーする。<br>
+ <br>
+　４．Visual Studio Codeを開く。
+　<br>
 
 
->〇Visual Studio Code <br>
-> <br>
->　５．「File」→「Open File...」で手順１のワークフォルダを選択する。<br>
-> <br>
->　６．「Terminal」→「New Terminal」を選択肢、ターミナルを起動する。 <br>
-> <br>
->　７．ターミナルの画面にて「vagrant up」を実行する。<br>
->　　　この時、Vagrantfileを読み込み、記載されているシェルやバッチが実行される。<br>
+〇Visual Studio Code <br>
+ <br>
+　５．「File」→「Open File...」で手順１のワークフォルダを選択する。<br>
+ <br>
+　６．「Terminal」→「New Terminal」を選択肢、ターミナルを起動する。 <br>
+ <br>
+　７．ターミナルの画面にて「vagrant up」を実行する。<br>
+　　　この時、Vagrantfileを読み込み、記載されているシェルやバッチが実行される。<br>
 ```
 Vagrant.configure("2") do |config|
 　～省略～
@@ -83,16 +83,7 @@ Vagrant.configure("2") do |config|
 end
 
 ```
-> <br>
->　　　これでUbuntuやupdate、ライブラリ、ミドルウェア等の諸々の実行環境をインストールしてくれる。
-> <br>
->　８．
-
-
-
-
->
-
-
-
-    　
+ <br>
+　　　これでUbuntuやupdate、ライブラリ、ミドルウェア等の諸々の実行環境をインストールしてくれる。
+ <br>
+　８．
