@@ -12,7 +12,7 @@ MVCとRESTの仕組みを理解すること。
 　Visual Studio Code　：https://code.visualstudio.com/ <br>
 
  ### ツール説明
- 　
+ 
   《VirtualBox（ｳﾞｧｰﾁｬﾙ ﾎﾞｯｸｽ）》<br>
   　　仮想環境を入れておくための箱。<br>
   　　ここにLinuxやWindowsなどの仮想OSをセッティングする。<br>
