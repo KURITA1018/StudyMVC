@@ -49,7 +49,7 @@ MVCとRESTの仕組みを理解すること。
 　７．ターミナルの画面にて「vagrant up」を実行する。<br>
 　　　この時、Vagrantfileを読み込み、記載されているシェルやバッチが実行される。<br>
 
-- Vagrantfile
+- Vagrantfile（必要な箇所だけ抜粋）
 ```
 Vagrant.configure("2") do |config|
 　～省略～
@@ -113,10 +113,11 @@ chmod +x /usr/local/bin/docker-compose
 docker --version
 docker-compose --version
 ```
--check.sh
+- check.sh
 ```
 インストール結果をチェック（長くなるので省略）
 ```
+
 
  <br>
 　　　これでUbuntuやupdate、ライブラリ、ミドルウェア等の諸々の実行環境をインストールしてくれる。
