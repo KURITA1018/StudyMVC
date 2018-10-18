@@ -42,7 +42,7 @@ MVCとRESTの仕組みを理解すること。
 　<br>
 
 
-〇Visual Studio Code <br>
+#### ～Visual Studio Code～ <br>
  <br>
 　５．「File」→「Open File...」で手順１のワークフォルダを選択する。<br>
  <br>
