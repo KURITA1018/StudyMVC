@@ -83,6 +83,23 @@ Vagrant.configure("2") do |config|
 end
 
 ```
+ - init.sh
+```
+～省略～
+
+●時間の設定
+cp /etc/localtime /etc/localtime.org
+ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
+
+●language（言語）の設定
+apt-get install -y language-pack-ja
+
+●ファイヤーウォールのチェック  
+ufw status
+
+●treeコマンドのインストール  
+apt-get install -y tree
+```
  <br>
 　　　これでUbuntuやupdate、ライブラリ、ミドルウェア等の諸々の実行環境をインストールしてくれる。
  <br>
