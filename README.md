@@ -24,6 +24,11 @@ MVCとRESTの仕組みを理解すること。
    《Visual Studio Code（ｳﾞｨｼﾞｭｱﾙ ｽﾀﾁﾞｵ ｺｰﾄﾞ）》<br>
    　　マイクロソフトにより開発されたオープンソースのコードエディタ。<br>
    　　Gitクライアントの統合機能もある。<br>
+     
+ ### Visual Studio Code あった方がいいツールをインストール<br>
+　　　- sftp
+　　　- Git History
+　　　- GitLens
       
 # 環境構築・設定 <br>
 
@@ -136,3 +141,11 @@ docker-compose --version
  
      docker-compose run web rails new . --force --database=mysql
      sudo chown -R $USER:$USER workspace/
+     
+ １１．MySqlに接続するため、DB周りの設定をする。<br>
+    《config》
+   　　● VagrantDocker/docker/workspace/config/database.yml <br>
+     
+       username: root
+       password: password
+       host: mysql
