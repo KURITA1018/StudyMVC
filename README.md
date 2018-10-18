@@ -54,7 +54,7 @@ MVCとRESTの仕組みを理解すること。
 Vagrant.configure("2") do |config|
 　～省略～
 
-　config.vm.box = "ubuntu/bionic64"　** ←セットする仮想OSを記載する **
+　config.vm.box = "ubuntu/bionic64"　←セットする仮想OSを記載する
   
   ～省略～
 
@@ -74,12 +74,12 @@ Vagrant.configure("2") do |config|
 
   ～省略～
   
-  　config.vm.provision :shell, path: "vagrant/bootstrap/init.sh"
+  　config.vm.provision :shell, path: "vagrant/bootstrap/init.sh"　←init.shの実行
   
   ～省略～
 
-  　config.vm.provision :shell, path: "vagrant/bootstrap/docker.sh"
-  　config.vm.provision :shell, path: "vagrant/bootstrap/check.sh"
+  　config.vm.provision :shell, path: "vagrant/bootstrap/docker.sh"　←docker.shの実行
+  　config.vm.provision :shell, path: "vagrant/bootstrap/check.sh"　←check.shの実行
 end
 
 ```
