@@ -37,8 +37,10 @@ MVCとRESTの仕組みを理解すること。
 >　　（これは作業を簡易化するために黒澤さんにて用意して頂いたもの）※中身は別途確認要 <br>
 > <br>
 >　３．ダウンロードしたファイルの中身を全てを手順１で作成したワークフォルダにコピーする。<br>
-> <br>　
+> <br>
 >　４．Visual Studio Codeを開く。
+>　<br>
+
 
 >〇Visual Studio Code <br>
 > <br>
@@ -46,8 +48,45 @@ MVCとRESTの仕組みを理解すること。
 > <br>
 >　６．「Terminal」→「New Terminal」を選択肢、ターミナルを起動する。 <br>
 > <br>
->　７．
->
+>　７．ターミナルの画面にて「vagrant up」を実行する。<br>
+>　　　この時、Vagrantfileを読み込み、記載されているシェルやバッチが実行される。<br>
+```
+Vagrant.configure("2") do |config|
+　～省略～
+
+　config.vm.box = "ubuntu/bionic64"
+  
+  ～省略～
+
+　# ローカル環境から、192.168.33.10でウェブページアクセスできるようにする
+  config.vm.network "private_network", ip: "192.168.33.10"
+
+  ～省略～
+
+　config.vm.provider "virtualbox" do |vb|
+    vb.customize [
+      "modifyvm", :id,
+      "--memory", "10240", # メモリは10GB
+      "--cpus", "2", # CPUは2つ
+      "--ioapic", "on" # I/O APICを有効化
+    ]
+  end
+
+  ～省略～
+  
+  　config.vm.provision :shell, path: "vagrant/bootstrap/init.sh"
+  
+  ～省略～
+
+  　config.vm.provision :shell, path: "vagrant/bootstrap/docker.sh"
+  　config.vm.provision :shell, path: "vagrant/bootstrap/check.sh"
+end
+
+```
+> <br>
+>　　　これでUbuntuやupdate、ライブラリ、ミドルウェア等の諸々の実行環境をインストールしてくれる。
+> <br>
+>　８．
 
 
 
