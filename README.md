@@ -27,7 +27,7 @@ MVCとRESTの仕組みを理解すること。
       
 # 環境構築・設定 <br>
 
->Windows <br>
+>〇Windows <br>
 >
 >　１．任意の場所にワークフォルダを作成する。<br>
 >　　（どこでもいいが、容量が余っているドライブなど後に影響が出ない場所にした方がいい）<br>
@@ -36,8 +36,22 @@ MVCとRESTの仕組みを理解すること。
 >　　 URL : https://github.com/kurosawa-kuro/VagrantDocker <br>
 >　　（これは作業を簡易化するために黒澤さんにて用意して頂いたもの）※中身は別途確認要 <br>
 > <br>
->　３．ダウンロードしたファイルを１で作成したワークフォルダにコピーする。<br>
->　
+>　３．ダウンロードしたファイルの中身を全てを手順１で作成したワークフォルダにコピーする。<br>
+> <br>　
+>　４．Visual Studio Codeを開く。
+
+>〇Visual Studio Code <br>
+> <br>
+>　５．「File」→「Open File...」で手順１のワークフォルダを選択する。<br>
+> <br>
+>　６．「Terminal」→「New Terminal」を選択肢、ターミナルを起動する。 <br>
+> <br>
+>　７．
+>
+
+
+
+
 >
 
 
