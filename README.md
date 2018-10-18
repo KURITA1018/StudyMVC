@@ -176,7 +176,7 @@ docker-compose --version
 　● コンテナを起動する<br>
  
     docker-compose up web mysql mysql-gui portainer cloud9
- 　　
-　● Webページへアクセス
- 　
+ 
+　● Webページへアクセス<br>
+ 
     192.168.33.10/3000
