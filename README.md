@@ -38,23 +38,23 @@ MVCとRESTの仕組みを理解すること。
  <br>
 　３．ダウンロードしたファイルの中身を全てを手順１で作成したワークフォルダにコピーする。<br>
  <br>
-　４．Visual Studio Codeを開く。
+　４．Visual Studio Codeを開く。<br>
 　<br>
-　<br>
-
-#### ～Visual Studio Code～ <br>
 　５．「File」→「Open File...」で手順１のワークフォルダを選択する。<br>
  <br>
 　６．「Terminal」→「New Terminal」を選択肢、ターミナルを起動する。 <br>
  <br>
+ 
+ #### ～vagrant～ <br>
 　７．ターミナルの画面にて「vagrant up」を実行する。<br>
 　　　この時、Vagrantfileを読み込み、記載されているシェルやバッチが実行される。<br>
-   
+
+- Vagrantfile
 ```
 Vagrant.configure("2") do |config|
 　～省略～
 
-　config.vm.box = "ubuntu/bionic64"
+　config.vm.box = "ubuntu/bionic64"　** ←セットする仮想OSを記載する **
   
   ～省略～
 
