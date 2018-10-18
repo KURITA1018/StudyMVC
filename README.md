@@ -30,6 +30,7 @@ MVCとRESTの仕組みを理解すること。
 　　　- Git History
 　　　- GitLens
       
+***
 # 環境構築・設定 <br>
 
 #### ～Windows～ <br>
@@ -169,4 +170,13 @@ docker-compose --version
     
  ここまでで設定絡みはいったん完了
  ***
-    
+
+# 動作確認 
+
+　● コンテナを起動する<br>
+ 
+    docker-compose up web mysql mysql-gui portainer cloud9
+ 　　
+　● Webページへアクセス
+ 　
+    192.168.33.10/3000
