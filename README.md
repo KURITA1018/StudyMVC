@@ -145,23 +145,23 @@ docker-compose --version
      
  １１．MySqlに接続するため、DB周りの設定をする。<br>
  
-　《ログインユーザの設定》 <br>
-  　　● VagrantDocker/docker/workspace/config/database.yml <br>
+  《ログインユーザの設定》 <br>
+　　● VagrantDocker/docker/workspace/config/database.yml <br>
     　　以下の３行を変更
       
        username: root
        password: password
        host: mysql
 
-　《タイムゾーンの設定》<br>
-　　　● VagrantDocker/docker/workspace/config/application.rb <br>
+  《タイムゾーンの設定》<br>
+　　● VagrantDocker/docker/workspace/config/application.rb <br>
    
        # タイムゾーンの設定
        config.time_zone = 'Tokyo'
        config.active_record.default_timezone = :local
      
   《データベース作成》<br>
-  　　● コマンドラインから入力<br>
+　　● コマンドラインから入力<br>
     
        docker-compose up -d mysql
        docker-compose run web bundle exec rake db:create
